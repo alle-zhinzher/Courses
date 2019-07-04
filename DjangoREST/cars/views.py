@@ -10,3 +10,8 @@ class CarCreateView(generics.CreateAPIView):
 class CarsListView(generics.ListAPIView):
     serializer_class = CarsListSerializer
     queryset = Car.objects.all()
+
+
+class CarDetailView(generics.RetriveUpdateDesroyAPIView):
+    serializer_class = CarDetailSerializer
+    queryset = Car.objects.all()
