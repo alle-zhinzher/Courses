@@ -1,8 +1,8 @@
 from django.contrib import admin
-from django.urls import path, iclude
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/va/cars/', include('cars.urls')),
+    path('api/v1/cars/', include('cars.urls')),
 
 ]
