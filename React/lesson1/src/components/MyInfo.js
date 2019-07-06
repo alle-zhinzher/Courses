@@ -23,12 +23,12 @@ function MySport() {
     )
 }
 
-function MyInfo() {
+function MyInfo(props) {
     return (
         <div>
-            <MyName />
-            <MyText />
-            <MySport />
+            <p>{props.name}</p>
+            <p>{props.url}</p>
+            <p>{props.email}</p>
         </div>
     )
 }
