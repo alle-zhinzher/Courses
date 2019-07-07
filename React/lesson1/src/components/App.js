@@ -1,45 +1,42 @@
 import React from 'react';
+import todo from './toDoData';
+import ToDoItem from './ToDoItem';
 
 class App extends React.Component {
-    constructor () {
-        super() 
+    constructor() {
+        super()
         this.state = {
-            count: 0,
-            text: 0,
-            show: ""
-        };
-        this.overHendler = this.overHendler.bind(this);
+            todos: todo,
+        }
+        this.handleChange = this.handleChange.bind(this);
     }
-    howerHendler = () => {
-        this.setState({
-            count: this.state.count + 1,
-            show: this.state.count,
-        });
-    }
-    overHendler () {
-        this.setState({
-            text: "Over on the button",
-            show: this.state.text,
-        });
-    }
-    mouseOutHendler = () => {
-        this.setState({
-            show: this.state.count,
-        });
+    handleChange (id) {
+        this.setState(prevState => {
+            const updateTodos = prevState.todos.map(todo => {
+                if(todo.id === id) {
+                     todo.completed = !todo.completed 
+                    }
+                return todo
+            })
+            return {
+                todos:updateTodos
+            }
+        })
     }
     render() {
+        const todoData = this.state.todos.map(item => <ToDoItem 
+                                                            key={(item.id)}
+                                                            item={item}
+                                                            handleChange = {this.handleChange}
+                                                            />)
         return (
-            <div>
-                 <p>{this.state.show}</p>
-                <button onClick={this.howerHendler}
-                        onMouseOver={this.overHendler}
-                    onMouseOut={this.mouseOutHendler}
-                >Mouse</button>
-
+            <div className="todo-list">
+                {todoData}
             </div>
         )
     }
 }
+
 
 export default App
 
