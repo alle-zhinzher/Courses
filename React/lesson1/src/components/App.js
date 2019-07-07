@@ -8,6 +8,7 @@ class App extends React.Component {
             text: 0,
             show: ""
         };
+        this.overHendler = this.overHendler.bind(this);
     }
     howerHendler = () => {
         this.setState({
@@ -15,7 +16,7 @@ class App extends React.Component {
             show: this.state.count,
         });
     }
-    overHendler = () => {
+    overHendler () {
         this.setState({
             text: "Over on the button",
             show: this.state.text,
@@ -23,14 +24,13 @@ class App extends React.Component {
     }
     mouseOutHendler = () => {
         this.setState({
-            
             show: this.state.count,
         });
     }
     render() {
         return (
             <div>
-                <p>{this.state.show}</p>
+                 <p>{this.state.show}</p>
                 <button onClick={this.howerHendler}
                         onMouseOver={this.overHendler}
                     onMouseOut={this.mouseOutHendler}
