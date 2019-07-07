@@ -5,16 +5,17 @@ import Header from './Header';
 
 class App extends React.Component {
     constructor () {
-        super()
+        super() 
         this.state = {
-            answer: "Yess"
+            answer: "Yess",
+            name: "Alexsandr",
         }
     }
     render() {
         return (
             <div>
                 <h1>{this.state.answer}</h1>
-                <Header name="Alex" />
+                <Header name={this.state.name} />
                 <Greeting />                
             </div>
         )
