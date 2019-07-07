@@ -1,24 +1,32 @@
 import React from 'react';
-import Conditional from './Conditional';
 
 class App extends React.Component {
     constructor() {
         super()
         this.state = {
-            
-            login: false,
+            loading: false,
+            data: {},
         }
+        
     }
+
     componentDidMount(){
-        setTimeout(()=>{
-            this.setState(
-                {loading:false}
-                )}, 2000)
+        this.setState({ loading: true })  
+        fetch("https://swapi.co/api/people/1")
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    loading: false,
+                    data: data,
+                })
+            })
     }
+
     render() {
+        const text = this.state.loading ? "Loading..." : this.state.data.name
         return (
             <div className="todo-list">
-                <Conditional loading={this.state.loading} />
+                {text }
             </div>
         )
     }
@@ -78,4 +86,17 @@ class App extends React.Component {
 export default App
 
 
+
+
+componentDidMount(){
+        this.setState({ loading: true })
+        fetch("https://swapi.co/api/people/1")
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    loading: false,
+                    data: data,
+                })
+            })
+    }
 */
