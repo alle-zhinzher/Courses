@@ -1,9 +1,19 @@
-import React from 'react'
+import React, {Component, Fragment} from 'react'
 import ReactDOM from 'react-dom'
 
-class App extends React.Component {
+import Header from './layout/Header';
+import Dashboard from './leads/Dashdoard';
+
+class App extends Component {
     render(){
-        return <h1>React App in Django</h1>
+        return (
+            <Fragment>
+                <Header />
+                <div className="container">
+                    <Dashboard />
+                </div>
+            </Fragment>
+        )
     }
 }
 
