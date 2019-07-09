@@ -1,9 +1,14 @@
 import React from 'react';
+import Post from './components/Post';
+import PostForm from './components/PostForm';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      <PostForm />
+      <hr />
+      <Post />
     </div>
   );
 }
