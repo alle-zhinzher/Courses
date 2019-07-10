@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./leadmanager/frontend/src/actions/types.js":
+/*!***************************************************!*\
+  !*** ./leadmanager/frontend/src/actions/types.js ***!
+  \***************************************************/
+/*! exports provided: GET_LEADS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GET_LEADS\", function() { return GET_LEADS; });\nvar GET_LEADS = \"GET_LEADS\";\n\n//# sourceURL=webpack:///./leadmanager/frontend/src/actions/types.js?");
+
+/***/ }),
+
 /***/ "./leadmanager/frontend/src/components/App.js":
 /*!****************************************************!*\
   !*** ./leadmanager/frontend/src/components/App.js ***!
@@ -166,7 +178,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n //User reduser import\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"])({}));\n\n//# sourceURL=webpack:///./leadmanager/frontend/src/reducers/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _leads__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./leads */ \"./leadmanager/frontend/src/reducers/leads.js\");\n //User reduser imports\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"])({\n  leads: _leads__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n}));\n\n//# sourceURL=webpack:///./leadmanager/frontend/src/reducers/index.js?");
+
+/***/ }),
+
+/***/ "./leadmanager/frontend/src/reducers/leads.js":
+/*!****************************************************!*\
+  !*** ./leadmanager/frontend/src/reducers/leads.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _actions_types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/types.js */ \"./leadmanager/frontend/src/actions/types.js\");\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { if (i % 2) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } else { Object.defineProperties(target, Object.getOwnPropertyDescriptors(arguments[i])); } } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\nvar initialState = {\n  something: 'text',\n  leads: []\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;\n  var action = arguments.length > 1 ? arguments[1] : undefined;\n\n  switch (action.type) {\n    case _actions_types_js__WEBPACK_IMPORTED_MODULE_0__[\"GET_LEADS\"]:\n      return _objectSpread({}, state, {\n        leads: action.payload\n      });\n\n    default:\n      return state;\n  }\n});\n\n//# sourceURL=webpack:///./leadmanager/frontend/src/reducers/leads.js?");
 
 /***/ }),
 
