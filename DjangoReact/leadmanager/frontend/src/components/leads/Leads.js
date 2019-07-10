@@ -1,14 +1,42 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+import { getLeads } from '../../actions/leads';
+
 
 export class Leads extends Component {
+    static PropTypes = {
+        leads: PropTypes.array.isRequired
+    }
+    componentDidMount() {
+        this.props.getLeads();
+    }
     render() {
         return (
-            <div>
-                <h1>Leads List</h1>
-            </div>
+            <Fragment>
+                <h2>Leads</h2>
+                <table className="table table-striped">
+                    <thead>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Mesaage</th>
+                        <th />
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </Fragment>
         )
     }
 }
 
-export default Leads
+
+const mapStateToProps = state => ({
+    leads: state.leads.leads
+});
+
+export default connect(mapStateToProps, { getLeads })(Leads);
 
